@@ -1,0 +1,59 @@
+﻿<Window x:Class="EasyWord.EasyWordWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EasyWord"
+        mc:Ignorable="d"
+        Title="EasyWordWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Menüleiste (Für Aufgabe 4 - Softwareinformationen) -->
+        <Menu Grid.Row="0">
+            <MenuItem Header="Datei">
+                <MenuItem Header="Öffnen" />
+                <MenuItem Header="Speichern" />
+                <MenuItem Header="Beenden" />
+            </MenuItem>
+            <MenuItem Header="Hilfe">
+                <MenuItem Header="Über EasyWord" />
+            </MenuItem>
+        </Menu>
+
+        <!-- Ansicht für Aufgabe 1 - Liste von Englischwörtern lernen -->
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Deutsches Wort:" />
+            <TextBlock x:Name="GermanWordLabel" FontSize="20" />
+            <TextBlock Text="Übersetzung eingeben:" />
+            <TextBox x:Name="EnglishTranslationTextBox" Width="200" />
+            <Button x:Name="CheckButton" Content="Überprüfen" Click="CheckButton_Click" />
+            <TextBlock x:Name="FeedbackLabel" Foreground="Red" FontSize="16" />
+        </StackPanel>
+
+        <!-- Ansicht für Aufgabe 2 - Speicherung von Wörtern und Benutzereinstellungen -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Sprache wählen:" />
+            <ComboBox x:Name="LanguageComboBox" Width="100" SelectedValue="{Binding Language}" />
+            <Button Content="Speichern" Click="SaveButton_Click" />
+            <Button Content="Laden" Click="LoadButton_Click" />
+        </StackPanel>
+
+        <!-- Ansicht für Aufgabe 3 - Groß-/Kleinschreibung ignorieren -->
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <CheckBox x:Name="IgnoreCaseCheckBox" Content="Groß-/Kleinschreibung ignorieren" IsChecked="{Binding IgnoreCase}" Checked="IgnoreCaseCheckBox_Checked" />
+        </StackPanel>
+
+        <!-- Ansicht für Aufgabe 4 - Anzeige von Softwareinformationen -->
+        <StackPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="AppInfoLabel" FontSize="16" />
+        </StackPanel>
+    </Grid>
+</Window>
