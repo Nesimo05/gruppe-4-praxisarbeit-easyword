@@ -42,17 +42,26 @@ public class WordList
 
     internal void Reset()
     {
-        throw new NotImplementedException();
+        words.Clear();
     }
 
     internal bool AllWordsLearned()
     {
+
+        if (words.Count == 0) return false;
         throw new NotImplementedException();
     }
 
     internal bool IsEmpty()
     {
-        throw new NotImplementedException();
+        if (words != null && words.Count > 0)
+        {
+            return false; // Die Datei ist nicht leer
+        }
+        else
+        {
+            return true; // Die Datei ist leer
+        }
     }
 
     internal Word GetRandomWord()
