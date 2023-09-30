@@ -41,7 +41,7 @@
         <!-- Ansicht für Aufgabe 2 - Speicherung von Wörtern und Benutzereinstellungen -->
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Sprache wählen:" />
-            <ComboBox x:Name="LanguageComboBox" Width="100" SelectedValue="{Binding Language}" />
+            <ComboBox x:Name="LanguageComboBox" Width="100" SelectedValue="{Binding Language}" SelectionChanged="LanguageComboBox_SelectionChanged" />
             <Button Content="Speichern" Click="SaveButton_Click" />
             <Button Content="Laden" Click="LoadButton_Click" />
         </StackPanel>

@@ -17,7 +17,8 @@ public class WordList
         words.Add(word);
     }
 
-    public void RemoveWord(Word word) {
+    public void RemoveWord(Word word)
+    {
         words.Remove(word);
     }
 
@@ -47,24 +48,24 @@ public class WordList
 
     internal bool AllWordsLearned()
     {
-
-        if (words.Count == 0) return false;
-        throw new NotImplementedException();
+        return words.Count > 0;  // Consider all words learned if there are any words
     }
 
     internal bool IsEmpty()
     {
-        if (words != null && words.Count > 0)
-        {
-            return false; // Die Datei ist nicht leer
-        }
-        else
-        {
-            return true; // Die Datei ist leer
-        }
+        return words == null || words.Count == 0;
     }
 
     internal Word GetRandomWord()
+    {
+        if (words.Count == 0)
+            return null;
+
+        int index = random.Next(words.Count);
+        return words[index];
+    }
+
+    internal void Clear()
     {
         throw new NotImplementedException();
     }

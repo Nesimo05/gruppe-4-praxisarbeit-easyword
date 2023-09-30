@@ -10,6 +10,6 @@ public class AppInfo
     {
         SoftwareName = "EasyWord";
         Version = "1.0"; // Standardwerte für die Softwareinformationen
-        Developer = "Ihr Entwicklername";
+        Developer = "Anthony David Nesim Sebastian ";
     }
 }
